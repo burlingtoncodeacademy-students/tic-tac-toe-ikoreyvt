@@ -10,38 +10,52 @@
   <body>
     <header>
       <h2 id="page-title">
-        <a href="index.html">SINGLE PLAYER TIC TAC TOE</a>
+        <a href="index.html">CYCLOPS TIC TAC TOE</a>
       </h2>
     </header>
-    <aside id="how-to">
-      <h3 id="how-to-title">How To Play</h3>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/USEjXNCTvcc"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </aside>
-    <section>
-      <section id="tictactoe">
-        <div id="left-top"></div>
-        <div id="mid-top"></div>
-        <div id="right-top"></div>
-        <div id="left-mid"></div>
-        <div id="mid-mid"></div>
-        <div id="right-mid"></div>
-        <div id="left-bottom"></div>
-        <div id="mid-bottom"></div>
-        <div id="right-bottom"></div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="multi-player.html">MULTIPLAYER</a>
+    </nav>
+    <main id="game-page">
+      <aside id="how-to">
+        <h3 id="how-to-title">INSTRUCTIONS</h3>
+        <section id="which-cyclops">
+          <p>Player:</p>
+          <img src="images/green_cyclops.png" title="Player One" alt="green cyclops" width= "50px"; height="65px"; />
+          <p>Computer:</p>
+          <img src="images/red_cyclops.png" title="Player Two" alt="red cyclops" width= "50px"; height="65px"; />
+        </section>
+        <iframe
+          width="360"
+          height="250"
+          src="https://www.youtube.com/embed/USEjXNCTvcc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </aside>
+      <section id="game-board">
+        <h3>SINGLE PLAYER GAME</h3>
+        <section id="tictactoe">
+          <div id="left-top"></div>
+          <div id="mid-top"></div>
+          <div id="right-top"></div>
+          <div id="left-mid"></div>
+          <div id="mid-mid"></div>
+          <div id="right-mid"></div>
+          <div id="left-bottom"></div>
+          <div id="mid-bottom"></div>
+          <div id="right-bottom"></div>
+        </section>
+        <section id="game-buttons">
+          <button type="button">Start</button>
+          <button type="button" disabled>Restart</button>
+          <button type="button" disabled>Replay</button>
+        </section>
       </section>
-      <section id="game-buttons">
-        <button>Start</button>
-        <button>Restart</button>
-        <button>Replay</button>
-      </section>
-    </section>
+    </main>
+    <footer>COPYRIGHT INFO BABYYYYYY&#169</footer>
   </body>
 </html>

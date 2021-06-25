@@ -1,49 +1,343 @@
-body{
-  margin:0;
-  background-image: url(https://scontent-iad3-2.xx.fbcdn.net/v/t1.6435-9/201849338_350289419783637_1387539815293909956_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=fFy2G0U7dLMAX9sb_N4&_nc_ht=scontent-iad3-2.xx&oh=43e05caa5d7c8798c54ace52dda258c1&oe=60D960AA);
-  background-size: contain;
+body {
+  margin: 0;
+  background-image: url(https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg);
+  background-size: cover;
+  background-repeat: none;
   background-position: center center;
 }
 
-
 /* header styles */
-header{
+header {
   text-align: center;
-  height: 20vh;
-}
-header a:visited{
-  color:hotpink;
+  padding-top: 30px;
+  height: 15vh;
 }
 
-h2{
+header a {
+  color: rgb(190, 104, 6);
+}
+
+header a:visited {
+  color: rgb(190, 104, 6);
+}
+
+h2 {
   font-size: 40px;
+  margin: 0;
 }
 
 /* game mode selection */
 
-#game-modes{
+#game-modes {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 70vh;
+  height: 65vh;
+}
+
+a img:hover {
+  transform: scale(1.1);
+}
+
+figcaption {
+  padding-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(255, 0, 0);
 }
 
 /* footer */
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+  color: white;
+}
+
+/* game page layout */
+
+#game-page {
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  color: rgb(0, 117, 25);
+}
+
+/* NAV BAR ON GAMEPAGES */
+nav {
+  display: flex;
+  justify-content: space-around;
   height: 5vh;
+  color: deeppink;
+  font-size: 30px;
+  padding-bottom: 15px;
 }
 
-/* anchor tags */
-
-a:link{
+a:link {
   text-decoration: none;
-  color: hotpink
+  color: hotpink;
 }
 
-a img:hover{
-  opacity: .9;
+a:visited {
+  color: rgb(140, 9, 180);
 }
+
+/* how to layout */
+
+#how-to {
+  flex: 1;
+  text-align: center;
+  margin-left: 5vw;
+  align-items: center;
+}
+
+#how-to-title {
+  color: rgb(0, 117, 25);
+}
+
+#which-cyclops {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgb(245, 241, 37);
+  border: 5px green solid;
+  border-radius: 20px;
+  width: 250px;
+}
+
+p ~ img {
+  width: 50px;
+  height: 65px;
+}
+
+section p {
+  display: inline;
+  font-size: 20px;
+  color: rgb(13, 25, 184);
+}
+
+iframe {
+  width: 250px;
+  height: 150px;
+}
+
+/* game board layout */
+
+#game-board {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* tictactoe construction */
+
+#tictactoe {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+#left-top {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-right: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+}
+
+#mid-top {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-bottom: 2px solid yellow;
+  border-right: 2px solid yellow;
+}
+
+#right-top {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-bottom: 2px solid yellow;
+}
+
+#left-mid {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-bottom: 2px solid yellow;
+  border-right: 2px solid yellow;
+}
+
+#mid-mid {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-bottom: 2px solid yellow;
+  border-right: 2px solid yellow;
+}
+
+#right-mid {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-bottom: 2px solid yellow;
+}
+
+#left-bottom {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-right: 2px solid yellow;
+}
+
+#mid-bottom {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-right: 2px solid yellow;
+}
+
+#right-bottom {
+  width: 7.5vw;
+  height: 7.5vw;
+}
+
+@media (max-width: 768px) {
+
+
+  /* landing page media query */
+  #game-modes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+  }
+
+  a img {
+    height: 20vh;
+  }
+
+  #game-page {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    color: rgb(0, 117, 25);
+  }
+
+  /* game board layout */
+
+  #game-board {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* tictactoe construction */
+
+  #tictactoe {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 10px;
+  }
+
+  #left-top {
+    width: 20vw;
+    height: 20vw;
+    border-right: 2px solid yellow;
+    border-bottom: 2px solid yellow;
+  }
+
+  #mid-top {
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px solid yellow;
+    border-right: 2px solid yellow;
+  }
+
+  #right-top {
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px solid yellow;
+  }
+
+  #left-mid {
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px solid yellow;
+    border-right: 2px solid yellow;
+  }
+
+  #mid-mid {
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px solid yellow;
+    border-right: 2px solid yellow;
+  }
+
+  #right-mid {
+    width: 20vw;
+    height: 20vw;
+    border-bottom: 2px solid yellow;
+  }
+
+  #left-bottom {
+    width: 20vw;
+    height: 20vw;
+    border-right: 2px solid yellow;
+  }
+
+  #mid-bottom {
+    width: 20vw;
+    height: 20vw;
+    border-right: 2px solid yellow;
+  }
+
+  #right-bottom {
+    width: 20vw;
+    height: 20vw;
+  }
+  /* how to layout */
+
+  #how-to {
+    text-align: center;
+    align-items: center;
+    margin-left: 0;
+    width: 75vw;
+  }
+
+  #how-to-title {
+    color: rgb(0, 117, 25);
+  }
+
+  #which-cyclops {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(245, 241, 37);
+    border: 4px green solid;
+    border-radius: 20px;
+    width: 50vw;
+  }
+
+  p ~ img {
+    width: 40px;
+    height: 55px;
+  }
+
+  section p {
+    display: inline;
+    font-size: 15px;
+    color: rgb(13, 25, 184);
+  }
+
+  iframe {
+    width: 250px;
+    height: 150px;
+  }
+}
+
+
+/* animations */
+
