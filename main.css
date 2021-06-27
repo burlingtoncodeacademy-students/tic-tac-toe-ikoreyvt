@@ -1,5 +1,7 @@
+/* remove margin and padding around the body  and give a background image*/
 body {
   margin: 0;
+  padding:0;
   background-image: url(https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg);
   background-size: cover;
   background-repeat: none;
@@ -7,12 +9,13 @@ body {
 }
 
 /* header styles */
+
 header {
   text-align: center;
   padding-top: 30px;
   height: 15vh;
 }
-
+/* unified colors across the header links */
 header a {
   color: rgb(190, 104, 6);
 }
@@ -20,7 +23,7 @@ header a {
 header a:visited {
   color: rgb(190, 104, 6);
 }
-
+/* removes margin off the title to bring items on page closer for aesthetics */
 h2 {
   font-size: 40px;
   margin: 0;
@@ -34,11 +37,11 @@ h2 {
   align-items: center;
   height: 65vh;
 }
-
+/* add a hover animation so they know they are hovered over it */
 a img:hover {
   transform: scale(1.1);
 }
-
+/* move figcaption down from picture and increase font size*/
 figcaption {
   padding-top: 10px;
   font-size: 20px;
@@ -57,7 +60,7 @@ footer {
 }
 
 /* game page layout */
-
+/* turn the whole game page into a flexbox to align items */
 #game-page {
   display: flex;
   justify-content: center;
@@ -66,70 +69,88 @@ footer {
 }
 
 /* NAV BAR ON GAMEPAGES */
+
 nav {
   display: flex;
   justify-content: space-around;
   height: 5vh;
-  color: deeppink;
   font-size: 30px;
-  padding-bottom: 15px;
+  padding: 15px;
+  background-color: rgb(49, 27, 70);
+  border: darkslateblue 5px solid;
+  border-radius: 25px;
+  width: 75vw;
+  margin: auto;
+  margin-bottom: 20px;
 }
-
+/* unified color of nav links and added a little hover animation */
 a:link {
   text-decoration: none;
-  color: hotpink;
+  color: rgb(200, 111, 228);
 }
 
 a:visited {
-  color: rgb(140, 9, 180);
+  color: rgb(200, 111, 228);
 }
 
+a:hover {
+  transform: scale(1.2);
+}
 /* how to layout */
-
+/* assign flex size of 1 to tell screen how much size to take up */
 #how-to {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   flex: 1;
   text-align: center;
   margin-left: 5vw;
   align-items: center;
+  height: 50vh;
+  background-color: rgb(245, 241, 37);
+  border: 5px green solid;
+  border-radius: 20px;
 }
 
 #how-to-title {
   color: rgb(0, 117, 25);
 }
-
+/* made the section for determining which cyclops the player is a grid for layout*/
 #which-cyclops {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  background-color: rgb(245, 241, 37);
-  border: 5px green solid;
-  border-radius: 20px;
   width: 250px;
+  animation-name: spinny;
 }
-
+/* targeted images directly after paragraphs to make the images in which cyclops smaller */
 p ~ img {
   width: 50px;
   height: 65px;
+  padding-left: 20px;
+  transition-duration: 1s;
 }
-
+/* make the images rotate 360 degrees when hovered over just for fun */
+p ~ img:hover{
+  transform: rotate(360deg);
+}
 section p {
   display: inline;
   font-size: 20px;
-  color: rgb(13, 25, 184);
+  color: rgb(0, 0, 0);
 }
-
+/* added iframe dimensions to the css to control easier */
 iframe {
   width: 250px;
   height: 150px;
 }
 
 /* game board layout */
-
+/* added flex of 3 to display this section 3 times larger than the how to section */
 #game-board {
   flex: 3;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -200,9 +221,8 @@ iframe {
 }
 
 @media (max-width: 768px) {
-
-
   /* landing page media query */
+  /* change layout of landing page to be columns on mobile*/
   #game-modes {
     display: flex;
     justify-content: space-around;
@@ -214,20 +234,47 @@ iframe {
   a img {
     height: 20vh;
   }
+  /* game page layout for mobile  to force items to their respective areas*/
 
+  #mobile-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.25fr 3fr 0.5fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "game-board"
+      "footer";
+  }
+  /* tell header to be in the header */
+  header {
+    grid-area: header;
+  }
+  /* tell nav to take up the nav section */
+  nav {
+    grid-area: nav;
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  /* tell game to take up the board section and change the flex direction to reverse column to get instructions below game instead */
   #game-page {
+    grid-area: game-board;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 110vh;
     color: rgb(0, 117, 25);
   }
-
+  /* tell footer to be at the bottom */
+  footer {
+    grid-area: footer;
+  }
   /* game board layout */
 
   #game-board {
     display: inline-flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -298,13 +345,18 @@ iframe {
     width: 20vw;
     height: 20vw;
   }
+
   /* how to layout */
 
   #how-to {
+    
     text-align: center;
     align-items: center;
+    justify-content: space-around;
     margin-left: 0;
-    width: 75vw;
+    flex: 1;
+    height: 60vh;
+    width: 80vw;
   }
 
   #how-to-title {
@@ -322,8 +374,8 @@ iframe {
   }
 
   p ~ img {
-    width: 40px;
-    height: 55px;
+    width: 30px;
+    height: 40px;
   }
 
   section p {
@@ -333,11 +385,7 @@ iframe {
   }
 
   iframe {
-    width: 250px;
-    height: 150px;
+    width: 50vw;
+    height: 15vh;
   }
 }
-
-
-/* animations */
-
