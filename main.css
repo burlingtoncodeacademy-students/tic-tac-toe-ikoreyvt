@@ -39,7 +39,16 @@ h2 {
 }
 /* add a hover animation so they know they are hovered over it */
 a img:hover {
-  transform: scale(1.1);
+  animation-name: zoomy;
+  animation-duration: 1s;
+}
+@keyframes zoomy {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
 }
 /* move figcaption down from picture and increase font size*/
 figcaption {
@@ -79,7 +88,7 @@ nav {
   background-color: rgb(49, 27, 70);
   border: darkslateblue 5px solid;
   border-radius: 25px;
-  width: 75vw;
+  width: 70vw;
   margin: auto;
   margin-bottom: 20px;
 }
@@ -94,7 +103,8 @@ a:visited {
 }
 
 a:hover {
-  transform: scale(1.2);
+  animation-name: zoomy;
+  animation-duration: 2s;
 }
 /* how to layout */
 /* assign flex size of 1 to tell screen how much size to take up */
@@ -128,12 +138,23 @@ p ~ img {
   width: 50px;
   height: 65px;
   padding-left: 20px;
-  transition-duration: 1s;
 }
+
 /* make the images rotate 360 degrees when hovered over just for fun */
 p ~ img:hover{
-  transform: rotate(360deg);
+  animation-name: spinny;
+  animation-duration: 1s;
 }
+
+@keyframes spinny {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 section p {
   display: inline;
   font-size: 20px;
@@ -256,7 +277,8 @@ iframe {
     font-size: 18px;
     margin-bottom: 0;
   }
-  /* tell game to take up the board section and change the flex direction to reverse column to get instructions below game instead */
+
+  /* tell game to take up the game-board section and change the flex direction to reverse column to get instructions below game instead */
   #game-page {
     grid-area: game-board;
     display: flex;
@@ -349,7 +371,6 @@ iframe {
   /* how to layout */
 
   #how-to {
-    
     text-align: center;
     align-items: center;
     justify-content: space-around;
