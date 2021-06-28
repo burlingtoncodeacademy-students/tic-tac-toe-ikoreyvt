@@ -41,6 +41,7 @@ h2 {
 a img:hover {
   animation-name: zoomy;
   animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 @keyframes zoomy {
   from{
@@ -101,7 +102,7 @@ a:link {
 a:visited {
   color: rgb(200, 111, 228);
 }
-
+/* give to zoom animation to the nav bar links as well*/
 a:hover {
   animation-name: zoomy;
   animation-duration: 2s;
