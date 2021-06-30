@@ -43,27 +43,28 @@
       <!-- sections for the tic tac toe board with a div for each square -->
       <section id="game-board">
         <!-- title for each game page telling them which version of the game they're playing -->
-        <h3>MULTIPLAYER GAME</h3>
+        <h3 id="game-status">MULTIPLAYER GAME</h3>
         <section id="tictactoe">
-          <div class="rb-border"></div>
-          <div class="rb-border"></div>
-          <div class="b-border"></div>
-          <div class="rb-border"></div>
-          <div class="rb-border"></div>
-          <div class="b-border"></div>
-          <div class="r-border"></div>
-          <div class="r-border"></div>
-          <div id="right-bottom"></div>
+          <div class="rb-border box"></div>
+          <div class="rb-border box"></div>
+          <div class="b-border box"></div>
+          <div class="rb-border box"></div>
+          <div class="rb-border box"></div>
+          <div class="b-border box"></div>
+          <div class="r-border box"></div>
+          <div class="r-border box"></div>
+          <div id="right-bottom" class="box"></div>
         </section>
         <!-- buttons to control game -->
         <section id="game-buttons">
-          <button type="button">Start</button>
-          <button type="button" disabled>Restart</button>
-          <button type="button" disabled>Replay</button>
+          <button type="button" id="start">Start</button>
+          <button type="button" id="restart" disabled>Restart</button>
+          <button type="button" id="replay" disabled>Replay</button>
         </section>
       </section>
     </main>
     <!-- copy right info in footer -->
     <footer>IMAGES OF CYCLOPS BELONG TO AARON BROOKS</footer>
+    <script src="scripts/multi-player.js"></script>
   </body>
 </html>

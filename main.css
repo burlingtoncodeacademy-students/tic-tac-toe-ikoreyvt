@@ -190,23 +190,27 @@ iframe {
   height: 7.5vw;
   border-right: 2px solid yellow;
   border-bottom: 2px solid yellow;
+  text-align: center;
 }
 
 .b-border {
   width: 7.5vw;
   height: 7.5vw;
   border-bottom: 2px solid yellow;
+  text-align: center;
 }
 
 .r-border {
   width: 7.5vw;
   height: 7.5vw;
   border-right: 2px solid yellow;
+  text-align: center;
 }
 
 #right-bottom {
   width: 7.5vw;
   height: 7.5vw;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -230,9 +234,9 @@ iframe {
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 0.25fr 3fr 0.5fr;
     grid-template-areas:
-      "header"
-      "nav"
-      "game-board"
+      "header",
+      "nav",
+      "game-board",
       "footer";
   }
   /* tell header to be in the header */
