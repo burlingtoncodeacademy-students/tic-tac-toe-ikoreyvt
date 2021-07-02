@@ -4,7 +4,7 @@ body {
   padding:0;
   background-image: url(https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_960_720.jpg);
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 
@@ -186,31 +186,39 @@ iframe {
 }
 
 .rb-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7.5vw;
   height: 7.5vw;
   border-right: 2px solid yellow;
   border-bottom: 2px solid yellow;
-  text-align: center;
 }
 
 .b-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7.5vw;
   height: 7.5vw;
   border-bottom: 2px solid yellow;
-  text-align: center;
 }
 
 .r-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7.5vw;
   height: 7.5vw;
   border-right: 2px solid yellow;
-  text-align: center;
 }
 
-#right-bottom {
+#box9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7.5vw;
   height: 7.5vw;
-  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -234,9 +242,9 @@ iframe {
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 0.25fr 3fr 0.5fr;
     grid-template-areas:
-      "header",
-      "nav",
-      "game-board",
+      "header"
+      "nav"
+      "game-board"
       "footer";
   }
   /* tell header to be in the header */
@@ -301,7 +309,7 @@ iframe {
     border-right: 2px solid yellow;
   }
 
-  #right-bottom {
+  #box9 {
     width: 20vw;
     height: 20vw;
   }
