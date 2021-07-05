@@ -28,10 +28,22 @@
         <h3 id="how-to-title">INSTRUCTIONS</h3>
         <!-- section one of instructions telling player what their pieces are -->
         <section id="which-cyclops">
-          <p>Player:</p>
-          <img src="images/green_cyclops.png" title="Player One" alt="green cyclops" width= "50px" height="65px" />
+          <p id="playerOneName">Player:</p>
+          <img
+            src="images/green_cyclops.png"
+            title="Player One"
+            alt="green cyclops"
+            width="50px"
+            height="65px"
+          />
           <p>Computer:</p>
-          <img src="images/red_cyclops.png" title="Player Two" alt="red cyclops" width= "50px" height="65px" />
+          <img
+            src="images/red_cyclops.png"
+            title="Player Two"
+            alt="red cyclops"
+            width="50px"
+            height="65px"
+          />
         </section>
         <!-- added media to instructions on how to play -->
         <iframe
@@ -47,25 +59,27 @@
         <!-- title for each game page telling them which version of the game they're playing -->
         <h3 id="game-status">SINGLE PLAYER GAME</h3>
         <section id="tictactoe">
-          <div class="rb-border box"></div>
-          <div class="rb-border box"></div>
-          <div class="b-border box"></div>
-          <div class="rb-border box"></div>
-          <div class="rb-border box"></div>
-          <div class="b-border box"></div>
-          <div class="r-border box"></div>
-          <div class="r-border box"></div>
-          <div id="right-bottom" class="box"></div>
+          <div class="rb-border box" id="box1"></div>
+          <div class="rb-border box" id="box2"></div>
+          <div class="b-border box" id="box3"></div>
+          <div class="rb-border box" id="box4"></div>
+          <div class="rb-border box" id="box5"></div>
+          <div class="b-border box" id="box6"></div>
+          <div class="r-border box" id="box7"></div>
+          <div class="r-border box" id="box8"></div>
+          <div class="box" id="box9"></div>
         </section>
-        <!-- buttons to control game -->
+        <!-- buttons to control game and timer -->
         <section id="game-buttons">
-          <button type="button">Start</button>
-          <button type="button" disabled>Restart</button>
-          <button type="button" disabled>Replay</button>
+          <button type="button" id="start">Start</button>
+          <button type="button" id="restart" disabled>Restart</button>
+          <button type="button" id="replay" disabled>Replay</button>
+          <p id="timer">Time: 00:00 (MM:SS)</p>
         </section>
       </section>
     </main>
     <!-- copy right info in footer -->
     <footer>IMAGES OF CYCLOPS BELONG TO AARON BROOKS</footer>
+    <script src="scripts/single-palyer.js"></script>
   </body>
 </html>

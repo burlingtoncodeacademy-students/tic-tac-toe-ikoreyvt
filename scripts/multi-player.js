@@ -1,7 +1,7 @@
 // grab the start button
 let startButt = document.getElementById("start");
 // grab reset button
-let resetButt = document.getElementById("restart");
+let restartButt = document.getElementById("restart");
 // take the game board title to manipulate later
 let gameStatus = document.getElementById("game-status");
 // game is initially not running
@@ -26,7 +26,7 @@ function gameStart() {
   // when function is called, remove functionality from start button
   startButt.disabled = true;
   // enable the reset button
-  resetButt.disabled = false;
+  restartButt.disabled = false;
   // after the players have submitted their names in the form, take the name and slice off the colon
   noColonOne = playerOneName.innerText.slice(
     0,
@@ -54,11 +54,11 @@ function cantPlace() {
   alert("There's already a piece here! Please select another square...");
 }
 // add event listener to reset button that when clicked will clear board and reset timer
-resetButt.addEventListener("click", (evt) => {
+restartButt.addEventListener("click", (evt) => {
   // re enable the start button
   startButt.disabled = false;
   // disable the reset button
-  resetButt.disabled = true;
+  restartButt.disabled = true;
   // stop the game from running so the timer stops
   gameRunning = false;
   // reset timer back to 0
@@ -153,9 +153,6 @@ function addPieces(evt) {
     // grab the id from the element it's targeting, slice the number off the end, and subtract 1 to add to the right index of the array to checking later on
     gameState[evt.target.id.slice(3) - 1] = "green";
     // add a new event listener that will warn the player against selecting a square that's already taken
-    console.log(
-      gameState.filter((color) => color === "green" || color === "red")
-    );
     evt.target.addEventListener("click", cantPlace);
     // remove the event listener from the the block so it cannot be clicked again
     evt.target.removeEventListener("click", addPieces);
@@ -176,9 +173,6 @@ function addPieces(evt) {
     // grab the id from the element it's targeting, slice the number off the end, and subtract 1 to add to the right index of the array to checking later on
     gameState[evt.target.id.slice(3) - 1] = "red";
     // add a new event listener that will warn the player against selecting a square that's already taken
-    console.log(
-      gameState.filter((color) => color === "green" || color === "red")
-    );
     evt.target.addEventListener("click", cantPlace);
     // remove event listen from element so they cannot click again
     evt.target.removeEventListener("click", addPieces);
