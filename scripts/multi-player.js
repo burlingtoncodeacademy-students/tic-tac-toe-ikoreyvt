@@ -153,6 +153,9 @@ function addPieces(evt) {
     // grab the id from the element it's targeting, slice the number off the end, and subtract 1 to add to the right index of the array to checking later on
     gameState[evt.target.id.slice(3) - 1] = "green";
     // add a new event listener that will warn the player against selecting a square that's already taken
+    console.log(
+      gameState.filter((color) => color === "green" || color === "red")
+    );
     evt.target.addEventListener("click", cantPlace);
     // remove the event listener from the the block so it cannot be clicked again
     evt.target.removeEventListener("click", addPieces);
@@ -173,6 +176,9 @@ function addPieces(evt) {
     // grab the id from the element it's targeting, slice the number off the end, and subtract 1 to add to the right index of the array to checking later on
     gameState[evt.target.id.slice(3) - 1] = "red";
     // add a new event listener that will warn the player against selecting a square that's already taken
+    console.log(
+      gameState.filter((color) => color === "green" || color === "red")
+    );
     evt.target.addEventListener("click", cantPlace);
     // remove event listen from element so they cannot click again
     evt.target.removeEventListener("click", addPieces);
@@ -308,5 +314,18 @@ function winCondition() {
     gameSquares[2].style.backgroundColor = "white";
     gameSquares[4].style.backgroundColor = "white";
     gameSquares[6].style.backgroundColor = "white";
+    // check to see if the gameState array has been completely replaced by the colors
+  } else if (
+    gameState.filter((color) => color === "green" || color === "red").length ===
+    9
+  ) {
+    // stop the timer by changing the gameRunning to false
+    gameRunning = false;
+    // iterate over every square and remove any lingering event listeners
+    for (item of gameSquares) {
+      item.removeEventListener("click", cantPlace);
+    }
+    // call a draw
+    gameStatus.textContent = "Draw! Try again!"
   }
 }
