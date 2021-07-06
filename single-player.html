@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Single Player</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="main.css" rel="stylesheet" />
+    <title>Single Player</title>
+  </head>
+  <!-- made the body a grid for mobile layout -->
+  <body id="mobile-page">
+    <!-- consistent header across all pages that links back to home -->
+    <header>
+      <h2 id="page-title">
+        <a href="index.html">CYCLOPS TIC TAC TOE</a>
+      </h2>
+    </header>
+    <!-- nav bar on the game pages for switching between game modes -->
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="multi-player.html">MULTIPLAYER</a>
+    </nav>
+    <!-- main for the whole game -->
+    <main id="game-page">
+      <!-- first section for instructions -->
+      <aside id="how-to">
+        <!-- title for instructions -->
+        <h3 id="how-to-title">INSTRUCTIONS</h3>
+        <!-- section one of instructions telling player what their pieces are -->
+        <section id="which-cyclops">
+          <p id="playerOneName">Player:</p>
+          <img
+            src="images/green_cyclops.png"
+            title="Player One"
+            alt="green cyclops"
+            width="50px"
+            height="65px"
+          />
+          <p>Computer:</p>
+          <img
+            src="images/red_cyclops.png"
+            title="Player Two"
+            alt="red cyclops"
+            width="50px"
+            height="65px"
+          />
+        </section>
+        <!-- added media to instructions on how to play -->
+        <iframe
+          src="https://www.youtube.com/embed/USEjXNCTvcc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </aside>
+      <!-- sections for the tic tac toe board with a div for each square -->
+      <section id="game-board">
+        <!-- title for each game page telling them which version of the game they're playing -->
+        <h3 id="game-status">SINGLE PLAYER GAME</h3>
+        <section id="tictactoe">
+          <div class="rb-border box" id="box1"></div>
+          <div class="rb-border box" id="box2"></div>
+          <div class="b-border box" id="box3"></div>
+          <div class="rb-border box" id="box4"></div>
+          <div class="rb-border box" id="box5"></div>
+          <div class="b-border box" id="box6"></div>
+          <div class="r-border box" id="box7"></div>
+          <div class="r-border box" id="box8"></div>
+          <div class="box" id="box9"></div>
+        </section>
+        <!-- buttons to control game and timer -->
+        <section id="game-buttons">
+          <button type="button" id="start">Start</button>
+          <button type="button" id="restart" disabled>Restart</button>
+          <button type="button" id="replay" disabled>Replay</button>
+          <p id="timer">Time: 00:00:00 (HH:MM:SS)</p>
+        </section>
+      </section>
+    </main>
+    <!-- copy right info in footer -->
+    <footer>IMAGES OF CYCLOPS BELONG TO AARON BROOKS</footer>
+    <script src="scripts/single-palyer.js"></script>
+  </body>
 </html>
