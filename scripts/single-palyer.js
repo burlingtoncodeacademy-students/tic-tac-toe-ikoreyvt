@@ -110,9 +110,9 @@ function startTimer() {
   let timer = document.getElementById("timer");
   // formatting for timer using ternary operation to decide seconds display
   // also assuming a game will never go over 10 minutes currently
-  timer.innerText = `Time: 0${Math.floor(time / 60)}:${
+  timer.innerText = `Time: 00:0${Math.floor(time / 60)}:${
     time % 60 < 10 ? "0" + (time % 60) : time % 60
-  } (MM:SS)`;
+  } (HH:MM:SS)`;
   // while game is running (truthy)
   if (gameRunning) {
     // increment time by 1

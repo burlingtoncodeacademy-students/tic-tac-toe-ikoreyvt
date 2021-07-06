@@ -124,9 +124,10 @@ function whoIs() {
 function startTimer() {
   // grab the timer element
   let timer = document.getElementById("timer");
-  timer.innerText = `Time: 0${Math.floor(time / 60)}:${
+  // using time / 60 to get minutes assuming no one will take longer than 9 minutes in its current state and using a ternary to decide whether a left padded 0 is needed for minutes
+  timer.innerText = `Time: 00:0${Math.floor(time / 60)}:${
     time % 60 < 10 ? "0" + (time % 60) : time % 60
-  } (MM:SS)`;
+  } (HH:MM:SS)`;
 
   // while game is running (truthy)
   if (gameRunning) {
